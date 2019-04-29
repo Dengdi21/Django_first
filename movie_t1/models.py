@@ -23,7 +23,7 @@ class MovieDetail(models.Model):
     # upload_to:上传图片到某个地方
     img = models.ImageField(upload_to='movie', null=True, default=None)
 
-    kind = models.ManyToManyField (MovieKind)
+    kind = models.ManyToManyField(MovieKind)
 
     def __str__(self):
         return self.title
