@@ -18,5 +18,8 @@ def index(request):
 
 def index1(request, movie_id):
     # pramary key
-    movie = MovieDetail.objects.filter(pk=movie_id)[0]
-    return HttpResponse(movie.title)
+    try:
+        movie = MovieDetail.objects.filter(pk=movie_id)[0]
+    except Exception:
+        return HttpResponse("not found")
+    return render(request, 'single.html', {"movie": movie})

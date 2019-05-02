@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/', hello_world),
     url(r'^hello2/', hello_world2),
+    # 在访问m_index/页面的时候，执行index函数
     url(r'^m_index/', index),
 
     # (?P<path>.*)$
